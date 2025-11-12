@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-nextjs",
+  "name": "portfolio-nextjs", // You can change this to "control-system" if you like, but it’s optional
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "export": "next build"
+    "export": "next build && next export" // Updated to ensure static export
   },
   "dependencies": {
     "react": "19.2.0",
