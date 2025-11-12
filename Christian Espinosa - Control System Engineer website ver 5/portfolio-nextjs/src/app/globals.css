@@ -363,50 +363,7 @@
   }
 }
 
-/* Force content visibility - Ultimate fix */
-* {
-  opacity: 1 !important;
-  visibility: visible !important;
-  animation-play-state: running !important;
-}
-
-section, section > * {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-}
-
-.max-w-7xl, .text-center, .hero-gradient > * {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-#home, #home > * {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-}
-
-#home h1, #home p, #home .flex {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-}
-
-#technical pre {
-  background: rgba(45, 45, 45, 0.95) !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-#technical pre code {
-  color: #ffffff !important;
-  background: transparent !important;
-}
-
-/* Remove any hiding effects */
-.hidden, [style*="display: none"], [style*="visibility: hidden"] {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
+/*
+  REMOVED the "Force content visibility - Ultimate fix" section.
+  It was conflicting with JavaScript animations.
+*/
