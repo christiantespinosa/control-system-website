@@ -1,20 +1,11 @@
-# This is the main build configuration
 [build]
-  # The command to build your Next.js site as a static export
   command = "npm run export"
-
-  # The directory to publish, which matches your 'output: "export"'
   publish = "out"
-
-  # The subfolder where your project is located
   base = "Control"
-
-  # Environment variables for the build
   [build.environment]
     NODE_VERSION = "18"
     NPM_FLAGS = "--production=false"
 
-# Asset processing settings
 [build.processing]
   skip_processing = false
   [build.processing.css]
@@ -26,8 +17,6 @@
   [build.processing.html]
     pretty_urls = true
 
-# --- Headers ---
-# General security headers for all pages
 [[headers]]
   for = "/*"
   [headers.values]
@@ -39,7 +28,6 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; media-src 'self' data:;"
 
-# Caching for static assets
 [[headers]]
   for = "/static/*"
   [headers.values]
@@ -57,13 +45,11 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# --- Redirects for Static Export ---
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# --- Environment Contexts ---
 [context.branch-deploy]
   [context.branch-deploy.environment]
     NODE_ENV = "staging"
@@ -71,9 +57,7 @@
   [context.production.environment]
     NODE_ENV = "production"
 
-# --- Plugin (re-added conditionally) ---
 [[plugins]]
   package = "@netlify/plugin-nextjs"
   [plugins.inputs]
-    # Disable if static export works without it
     enableNextjsPlugin = false
