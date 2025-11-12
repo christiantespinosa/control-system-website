@@ -2,13 +2,13 @@
 [build]
   # The command to build your Next.js site as a static export
   command = "npm run export"
- 
+
   # The directory to publish, which matches your 'output: "export"'
   publish = "out"
- 
+
   # The subfolder where your project is located
   base = "Control"
- 
+
   # Environment variables for the build
   [build.environment]
     NODE_VERSION = "18"
