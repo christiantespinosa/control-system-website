@@ -87,4 +87,4 @@
 #
 # The conflicting [[plugins]] package = "@netlify/plugin-nextjs" 
 # has been deleted to fix the deployment.
-#
+##
