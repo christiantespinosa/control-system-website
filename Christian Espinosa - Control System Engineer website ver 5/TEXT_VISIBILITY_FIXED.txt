@@ -1,0 +1,48 @@
+TEXT VISIBILITY ISSUE FIXED
+============================
+
+Date: 2025-11-12 21:39:24
+User: Christian Espinosa
+
+PROBLEM IDENTIFIED:
+- Text content was being hidden by conflicting CSS and JavaScript rules
+- CSS was trying to make content visible with `opacity: 1 !important;`
+- JavaScript was overriding this by setting `el.style.opacity = '0'`
+- This created a visibility conflict causing text to appear "covered by black rectangles"
+
+ROOT CAUSE ANALYSIS:
+1. CSS Rule (lines 372-376): `* { opacity: 1 !important; visibility: visible !important; }`
+2. JavaScript Override (lines 110-111): `el.style.opacity = '0';`
+3. Intersection Observer Override (lines 102-103): Setting style.opacity to '1' 
+
+The JavaScript was directly manipulating style.opacity which has higher specificity than CSS !important declarations when applied inline.
+
+SOLUTIONS IMPLEMENTED:
+
+1. HTML File (index.html):
+   - Removed `opacity: 0;` from `.scroll-reveal` CSS class (line 360)
+   - Enhanced hero section CSS overrides (lines 392-400)
+   - Added specific rules for hero section content visibility
+
+2. JavaScript File (script.js):
+   - Removed `el.style.opacity = '0';` from setupIntersectionObserver (line 110)
+   - Removed `el.style.transform = 'translateY(20px);` (line 111)
+   - Fixed intersection observer callback to not override CSS (lines 102-103)
+   - Now only adds CSS classes instead of manipulating styles directly
+
+TECHNICAL DETAILS:
+- CSS !important declarations have high specificity
+- But inline style assignments (el.style.opacity = '0') have even higher specificity
+- The conflict was causing content to remain hidden despite CSS overrides
+- Solution: Let CSS handle visibility, JavaScript only handles animations
+
+RESULT:
+✅ Text content now properly visible over all backgrounds
+✅ "Christian Espinosa" title and subtitle clearly displayed
+✅ Hero section description and buttons fully visible
+✅ Navigation and all text elements readable
+✅ Animations still work smoothly
+✅ No more "text covering black rectangles" issue
+
+STATUS: COMPLETE ✅
+All text visibility issues have been resolved through proper CSS/JavaScript coordination.
