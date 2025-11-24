@@ -59,5 +59,4 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-    enableNextjsPlugin = false
+
