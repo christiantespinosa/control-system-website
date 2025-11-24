@@ -1,0 +1,12 @@
+[build]
+  # This acts as a GPS. It forces Netlify to enter your subfolder.
+  base = "Christian Espinosa - Control System Engineer website ver 5/portfolio-nextjs"
+  
+  # This builds your specific app
+  command = "npm run build"
+  
+  # This is where Next.js stores the build
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
