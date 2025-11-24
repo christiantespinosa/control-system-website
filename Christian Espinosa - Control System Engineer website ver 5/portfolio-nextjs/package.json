@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-nextjs", // You can change this to "control-system" if you like, but it’s optional
+  "name": "portfolio-nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "export": "next build && next export" // Updated to ensure static export
+    "export": "next build" 
   },
   "dependencies": {
     "react": "19.2.0",
@@ -21,8 +21,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-syntax-highlighter": "^15.5.0",
-    "@tailwindcss/postcss": "^4",
     "tailwindcss": "^4",
+    "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "^14.2.5"
   }
