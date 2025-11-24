@@ -1,6 +1,12 @@
 [build]
-  command = ""
-  publish = "."
+  base = "portfolio-nextjs"    # Correct: Points to your app folder
+  command = "npm run build"    # Correct: Builds the app
+  # Note: Do not set 'publish'. The plugin sets it automatically.
+
+  [[plugins]]
+  package = "@netlify/plugin-nextjs"
+  
+  publish = ".next"
   [build.environment]
     NODE_VERSION = "18"
     NPM_FLAGS = "--production=false"
@@ -55,5 +61,6 @@
 [context.production]
   [context.production.environment]
     NODE_ENV = "production"
+
 
 
