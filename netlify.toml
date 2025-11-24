@@ -1,5 +1,5 @@
 [build]
-  # No base needed because your app is in the root
+  base = "app"    # Tells Netlify to look inside the 'app' folder
   command = "npm run build"
   publish = ".next"
 
