@@ -1,7 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "dist"
-  base = " "
+  publish = "."
   [build.environment]
     NODE_VERSION = "18"
     NPM_FLAGS = "--production=false"
@@ -57,6 +56,4 @@
   [context.production.environment]
     NODE_ENV = "production"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
 
