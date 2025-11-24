@@ -1,6 +1,4 @@
 [build]
-  # This line is CRITICAL. It points to your actual app folder.
-  base = "Christian Espinosa - Control System Engineer website ver 5/portfolio-nextjs"
   command = "npm run build"
   publish = ".next"
 
