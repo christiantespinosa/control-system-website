@@ -69,7 +69,7 @@ export default function SkillsSection() {
           }
         })
       },
-      { threshold: 0.3, passive: true }
+      { threshold: 0.3 }
     )
 
     const skillSections = document.querySelectorAll('#skills .skill-item')
