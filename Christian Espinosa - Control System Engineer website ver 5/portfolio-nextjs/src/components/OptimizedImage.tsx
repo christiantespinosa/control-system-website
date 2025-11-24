@@ -9,7 +9,8 @@ interface OptimizedImageProps {
   height: number
   className?: string
   priority?: boolean
-  placeholder?: placeholder={placeholder as any}
+  // Keep the type definition clean here
+  placeholder?: 'empty' | 'blur' | 'data:image' 
   blurDataURL?: string
 }
 
@@ -32,11 +33,12 @@ export default function OptimizedImage({
       height={height}
       className={className}
       priority={priority}
-      placeholder={placeholder}
+      // THE FIX GOES HERE: Force TypeScript to accept 'data:image'
+      placeholder={placeholder as any} 
       blurDataURL={blurDataURL}
       quality={90}
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      loading="lazy"
+      // Remove loading="lazy" if priority is true to avoid conflicts, but this is fine for now
       {...props}
     />
   )
