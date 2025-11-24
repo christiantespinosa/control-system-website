@@ -1,5 +1,5 @@
 [build]
-  base = "portfolio-nextjs"
+  # No base needed because your app is in the root
   command = "npm run build"
   publish = ".next"
 
