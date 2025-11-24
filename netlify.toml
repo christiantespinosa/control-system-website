@@ -1,5 +1,6 @@
 [build]
-  base = "app"    # Tells Netlify to look inside the 'app' folder
+  # We point to the folder exactly as it is named in your GitHub
+  base = "Christian Espinosa - Control System Engineer website ver 5/portfolio-nextjs"
   command = "npm run build"
   publish = ".next"
 
