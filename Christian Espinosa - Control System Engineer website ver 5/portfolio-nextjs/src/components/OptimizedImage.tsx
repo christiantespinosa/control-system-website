@@ -9,7 +9,7 @@ interface OptimizedImageProps {
   height: number
   className?: string
   priority?: boolean
-  placeholder?: 'empty' | 'blur' | 'data:image'
+  placeholder?: placeholder={placeholder as any}
   blurDataURL?: string
 }
 
